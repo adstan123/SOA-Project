@@ -1,0 +1,74 @@
+services:
+  soa-gatewayapi:
+    build:
+      context: D:\Master\Semestru III\SOA\SOA-Project
+      dockerfile: SOA.GatewayApi\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: SOA-GatewayApi
+      target: base
+    container_name: SOA-GatewayApi
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus
+      /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+      NUGET_PACKAGES: C:\.nuget\packages
+    image: soagatewayapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath c:\.nuget\packages  "C:\app\bin\Debug\netcoreapp3.1\SOA-GatewayApi.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: C:\remote_debugger\x64\utils\KillProcess.exe
+        dotnet.exe
+      com.microsoft.visualstudio.debuggee.program: '"C:\Program Files\dotnet\dotnet.exe"'
+      com.microsoft.visualstudio.debuggee.workingdirectory: C:\app
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\Adelin\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+    - C:\Users\Adelin\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+    - D:\Master\Semestru III\SOA\SOA-Project\SOA.GatewayApi:C:\app:rw
+    - C:\Users\Adelin\onecoremsvsmon\16.5.0101.0:C:\remote_debugger:ro
+    - D:\Master\Semestru III\SOA\SOA-Project:C:\src:rw
+    - C:\Users\Adelin\.nuget\packages:c:\.nuget\packages:ro
+  soa-securityapi:
+    build:
+      context: D:\Master\Semestru III\SOA\SOA-Project
+      dockerfile: SOA.SecurityApi\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: SOA-SecurityApi
+      target: base
+    container_name: SOA-SecurityApi
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus
+      /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+      NUGET_PACKAGES: C:\.nuget\packages
+    image: soasecurityapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath c:\.nuget\packages  "C:\app\bin\Debug\netcoreapp3.1\SOA-SecurityApi.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: C:\remote_debugger\x64\utils\KillProcess.exe
+        dotnet.exe
+      com.microsoft.visualstudio.debuggee.program: '"C:\Program Files\dotnet\dotnet.exe"'
+      com.microsoft.visualstudio.debuggee.workingdirectory: C:\app
+    ports:
+    - target: 80
+    - published: 9001
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Adelin\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+    - C:\Users\Adelin\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+    - D:\Master\Semestru III\SOA\SOA-Project\SOA.SecurityApi:C:\app:rw
+    - C:\Users\Adelin\onecoremsvsmon\16.5.0101.0:C:\remote_debugger:ro
+    - D:\Master\Semestru III\SOA\SOA-Project:C:\src:rw
+    - C:\Users\Adelin\.nuget\packages:c:\.nuget\packages:ro
+version: '3.4'

@@ -1,0 +1,345 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>
+        SOA-UBB - Stan Adelin
+    </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+</head>
+<body>
+    <header id="home" class="section">
+        <div class="header_main">
+            <!-- header inner -->
+            <div class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                            <div class="full">
+                                <div class="center-desk">
+                                    <div class="logo">
+                                        <a href="#home"><img src="~/images/logo.png" style="max-width: 100%;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                            <div class="menu-area">
+                                <div class="limit-box">
+                                    <nav class="main-menu">
+                                        <ul id="loginArea" class="menu-area-main">
+                                            <li> <input id="username" type="text" placeholder="username" name="username"></li>
+                                            <li> <input id="password" type="password" placeholder="password" name="password"></li>
+                                            <li><button id="btnLogin" type="button">Login</button></li>
+                                            <li><button id="btnSignOut" type="button">SignOut</button></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header inner -->
+            <section>
+                <div class="bannen_inner">
+                    <div class="container">
+                        <div class="row marginii">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="taital_main">
+
+                                </div>
+                                <h1 class="web_text"><strong>SOA - UBB</strong></h1>
+                                <p class="donec_text">
+                                    This is a project involving service oriented arhitecture created by Stan Adelin.
+                                </p>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="img-box">
+                                    <figure><img src="~/images/woofer.jpg" alt="img" / style="max-width: 100%;"></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </header>
+    <!-- banner end -->
+    <!-- about start -->
+    <div class="about_main layout_padding">
+        <div id="tryNow" class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="images">
+                        <img src="" style="max-width: 100%;">
+                    </div>
+
+                    <div class="btn_main">
+                        <form>
+                            <div class="form-group">
+                                <input id="lyrics" type="text" class="email-bt" placeholder="lyrics" name="lyrics">
+                            </div>
+                        </form>
+                        <div class="send_btn">
+                            <button id="btnSearch" type="button" class="read_bt">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right_section_main">
+                        <h1 class="dolar_tetx"><strong style="color: #2ba879;">Find song</strong></h1>
+                        <p class="donec_text">
+                            Introduce lyrics in the searchbox in order to obtain the song and the artist.
+                        </p>
+                        <div id="result" class="col-md-6">
+                            <h3>
+                                <div id="artist"></div>
+                                <span class="color">
+                                    <div id="song"></div>
+                                </span>
+                                <button id="btnSaveSearch" type="button" class="read_bt">Save search</button>
+                                <span id="displayMessage" class="color">
+                                    Search saved!
+                                </span>
+                            </h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about end -->
+    <!-- service start -->
+    <div id="service" class="choose_section">
+        <div class="container">
+            <div class="col-sm-12">
+                <h1 id="test" class="choose_text">Saved<span class="color"> searches</span></h1>
+                <table id="table" style="width:100%">
+                </table>
+                <div class="send_btn">
+                    <button id="btnLoad" type="button" class="read_bt">Load</button>
+                </div>
+                <p class="lorem_text">
+                    This is the list containing your saved searches. Press load button in order to load or refresh the list.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input_main">
+                <div class="container">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="section_right">
+                <img src="~/images/img-2.jpg" style="max-width: 100%;">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- service end -->
+
+    <div id="contact" class="copyright_main">
+        <div class="container">
+            <p class="copy_text">Stan Adelin -> stan.adelin@gmail.com</p>
+            <p class="copy_text">© 2021 All Rights Reserved. <a href="https://html.design">Free Website Templates</a></p>
+        </div>
+    </div>
+
+
+    <!-- contact end -->
+    <!-- Javascript files-->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="~/js/jquery-3.0.0.min.js"></script>
+    <script src="~/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+
+            $(".zoom").hover(function () {
+
+                $(this).addClass('transition');
+            }, function () {
+
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSignOut").hide();
+            $("#result").hide();
+            $("#displayMessage").hide();
+
+            $("#btnSearch").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/GetSongMethod",
+                    data: {
+                        "lyrics": $("#lyrics").val(),
+                    },
+                    success: function (response) {
+                        $('#artist').html(response.artist);
+                        $('#song').html(response.song);
+                        $("#result").show();
+                        console.log(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+            $("#btnLoad").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetSongsMethod",
+                    data: {
+                        "lyrics": $("#lyrics").val(),
+                    },
+                    success: function (response) {
+                        $("#table").empty();
+                        if (Object.keys(response).length > 0)
+                        {
+                            $("#table").append(" <tr><th>Lyrics</th><th>Artist</th><th>Song</th></tr>");
+                            $.each(response, function (index, value) {
+                                $("#table").append(" <tr><th>" + value.lyrics + "</th><th>" + value.artist +"</th><th>" +value.song + "</th></tr>");
+                            });
+                        }                    
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+            $("#btnSaveSearch").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/SaveSearchMethod",
+                    data: {
+                        "lyrics": $("#lyrics").val(),
+                        "artist": $("#artist").html(),
+                        "song": $("#song").html(),
+
+                    },
+                    success: function (response) {
+                        if (response.valid == true) {
+                            $("#displayMessage").show();
+
+                        }
+                        console.log(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+            $("#btnLogin").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/LoginMethod",
+                    data: {
+                        "username": $("#username").val(),
+                        "password": $("#password").val(),
+                    },
+                    success: function (response) {
+                        if (response.valid == true)
+                        {
+                            $('#username').hide();
+                            $('#password').hide();
+                            $('#btnLogin').hide();
+                            $('#btnSignOut').show();
+                        }
+                        console.log(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+            $("#btnSignOut").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/SignOutMethod",
+                    success: function (response) {
+                        if (response.valid == true) {
+                            $('#username').show();
+                            $('#password').show();
+                            $('#btnLogin').show();
+                            $('#btnSignOut').hide();
+                        }
+                        console.log(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

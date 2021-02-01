@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  soa-securityapi:
+    image: ${DOCKER_REGISTRY-}soasecurityapi
+    build:
+      context: .
+      dockerfile: SOA.SecurityApi\Dockerfile
+    ports:
+        - "9001:443"
+
+  soa-musicapi:
+    image: ${DOCKER_REGISTRY-}soamusicapi
+    build:
+      context: .
+      dockerfile: SOA.MusicApi\Dockerfile
+    ports:
+        - "9002:443"
+
+  soa-dataapi:
+    image: ${DOCKER_REGISTRY-}soadataapi
+    build:
+      context: .
+      dockerfile: SOA.DataApi\Dockerfile
+    ports:
+        - "9003:443"
+
+  soa-gatewayapi:
+    image: ${DOCKER_REGISTRY-}soagatewayapi
+    build:
+      context: .
+      dockerfile: SOA.GatewayApi\Dockerfile
+    ports:
+        - "9000:443"
+    depends_on:
+        - soa-securityapi
+        - soa-musicapi
+        - soa-dataapi
+
+
+
+  soa-userinterface:
+    image: ${DOCKER_REGISTRY-}soauserinterface
+    build:
+      context: .
+      dockerfile: SOA.UserInterface\WebApplication1\Dockerfile
+    ports:
+        - "9004:443"
+    depends_on:
+        - soa-gatewayapi

@@ -1,0 +1,9 @@
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\bin\Release\netcoreapp3.1\SOA.Common.deps.json
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\bin\Release\netcoreapp3.1\SOA.Common.dll
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\bin\Release\netcoreapp3.1\SOA.Common.pdb
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\obj\Release\netcoreapp3.1\SOA.Common.csprojAssemblyReference.cache
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\obj\Release\netcoreapp3.1\SOA.Common.AssemblyInfoInputs.cache
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\obj\Release\netcoreapp3.1\SOA.Common.AssemblyInfo.cs
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\obj\Release\netcoreapp3.1\SOA.Common.csproj.CoreCompileInputs.cache
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\obj\Release\netcoreapp3.1\SOA.Common.dll
+D:\Master\Semestru III\SOA\SOA-Project\SOA.Common\obj\Release\netcoreapp3.1\SOA.Common.pdb
